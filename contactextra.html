@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SERVICES MAIN</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="/css/font.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+		body {
+			/* color: black; */
+			background-color: #ffffff;
+			line-height: 1.5;
+			font-family: 'Poppins', sans-serif;
+			font-weight: 400;
+			overflow-x: hidden;
+		}
+
+		* {
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		:before,
+		:after {
+			box-sizing: border-box;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: auto;
+		}
+
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.v-center {
+			align-items: center;
+		}
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		/* header */
+		.header {
+			display: block;
+			width: 100%;
+			position: relative;
+			z-index: 99;
+			padding: 15px;
+		}
+
+		.header .item-left {
+			flex: 0 0 17%;
+		}
+
+		.header .logo a {
+			font-size: 30px;
+			color: #000000;
+			font-weight: 700;
+			text-decoration: none;
+		}
+
+		.header .item-center {
+			flex: 0 0 66%;
+		}
+
+		.header .item-right {
+			flex: 0 0 17%;
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		.header .item-right a {
+			text-decoration: none;
+			font-size: 16px;
+			color: #555555;
+			display: inline-block;
+			margin-left: 10px;
+			transition: color 0.3s ease;
+		}
+
+		.header .menu>ul>li {
+			display: inline-block;
+			line-height: 50px;
+			margin-left: 25px;
+		}
+
+		.header .menu>ul>li>a {
+			font-size: 15px;
+			font-weight: 500;
+			color: #000000;
+			position: relative;
+			text-transform: capitalize;
+			transition: color 0.3s ease;
+		}
+
+		.header .menu>ul>li .sub-menu {
+			position: absolute;
+			z-index: 500;
+			background-color: #ffffff;
+			box-shadow: -2px 2px 70px -25px rgba(0, 0, 0, 0.3);
+			padding: 20px 30px;
+			transition: all 0.5s ease;
+			margin-top: 25px;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		@media(min-width: 992px) {
+			.header .menu>ul>li.menu-item-has-children:hover .sub-menu {
+				margin-top: 0;
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+
+		.header .menu>ul>li .sub-menu>ul>li {
+			line-height: 1;
+		}
+
+		.header .menu>ul>li .sub-menu>ul>li>a {
+			display: inline-block;
+			padding: 10px 0;
+			font-size: 15px;
+			color: #555555;
+			transition: color 0.3s ease;
+			text-decoration: none;
+			text-transform: capitalize;
+		}
+
+		.header .menu>ul>li .single-column-menu {
+			min-width: 280px;
+			max-width: 350px;
+		}
+
+		.header .menu>ul>li .sub-menu.mega-menu>.list-item>ul>li {
+			line-height: 1;
+			display: block;
+		}
+
+		.header .menu>ul>li .sub-menu.mega-menu>.list-item>ul>li>a {
+			padding: 10px 0;
+			display: inline-block;
+			font-size: 15px;
+			color: #555555;
+			transition: color 0.3s ease;
+		}
+
+		.header .menu>ul>li .sub-menu.mega-menu {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.header .menu>ul>li .sub-menu.mega-menu-column-4 {
+			max-width: 1100px;
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			padding: 20px 15px;
+		}
+
+		.header .menu>ul>li .sub-menu.mega-menu-column-4>.list-item {
+			flex: 0 0 25%;
+			padding: 0 15px;
+		}
+
+		.header .menu>ul>li .sub-menu.mega-menu-column-4>.list-item .title {
+			font-size: 16px;
+			color: #24a3d8;
+			font-weight: 500;
+			line-height: 1;
+			padding: 10px 0;
+		}
+
+		.header .menu>ul>li .sub-menu.mega-menu-column-4>.list-item.text-center .title {
+			text-align: center;
+		}
+
+		.header .menu>ul>li .sub-menu.mega-menu-column-4>.list-item img {
+			max-width: 100%;
+			width: 100%;
+			vertical-align: middle;
+			margin-top: 10px;
+		}
+
+		.header .menu>ul>li .sub-menu.mega-menu>.list-item>ul>li>a:hover,
+		.header .menu>ul>li .sub-menu>ul>li>a:hover,
+		.header .item-right a:hover,
+		.header .menu>ul>li:hover>a {
+			color: #24a3d8;
+		}
+
+		/* banner section */
+		.banner-section {
+			background-image: url('../img/banner.jpg');
+			background-size: cover;
+			background-position: center;
+			height: 700px;
+			width: 100%;
+			display: block;
+		}
+
+		.mobile-menu-head,
+		.mobile-menu-trigger {
+			display: none;
+		}
+
+		/*responsive*/
+		@media(max-width: 991px) {
+
+			.header .item-center {
+				order: 3;
+				flex: 0 0 100%;
+			}
+
+			.header .item-left,
+			.header .item-right {
+				flex: 0 0 auto;
+			}
+
+			.v-center {
+				justify-content: space-between;
+			}
+
+			.header .mobile-menu-trigger {
+				display: flex;
+				height: 30px;
+				width: 30px;
+				margin-left: 15px;
+				cursor: pointer;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.header .mobile-menu-trigger span {
+				display: block;
+				height: 2px;
+				background-color: #333333;
+				width: 24px;
+				position: relative;
+			}
+
+			.header .mobile-menu-trigger span:before,
+			.header .mobile-menu-trigger span:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #333333;
+			}
+
+			.header .mobile-menu-trigger span:before {
+				top: -6px;
+			}
+
+			.header .mobile-menu-trigger span:after {
+				top: 6px;
+			}
+
+			.header .item-right {
+				align-items: center;
+			}
+
+			.header .menu {
+				position: fixed;
+				width: 320px;
+				background-color: #ffffff;
+				left: 0;
+				top: 0;
+				height: 100%;
+				overflow: hidden;
+				transform: translate(-100%);
+				transition: all 0.5s ease;
+				z-index: 1099;
+			}
+
+			.header .menu.active {
+				transform: translate(0%);
+			}
+
+			.header .menu>ul>li {
+				line-height: 1;
+				margin: 0;
+				display: block;
+			}
+
+			.header .menu>ul>li>a {
+				line-height: 50px;
+				height: 50px;
+				padding: 0 50px 0 15px;
+				display: block;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+			}
+
+			.header .menu>ul>li>a i {
+				position: absolute;
+				height: 50px;
+				width: 50px;
+				top: 0;
+				right: 0;
+				text-align: center;
+				line-height: 50px;
+				transform: rotate(-90deg);
+			}
+
+			.header .menu .mobile-menu-head {
+				display: flex;
+				height: 50px;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+				justify-content: space-between;
+				align-items: center;
+				position: relative;
+				z-index: 501;
+				position: sticky;
+				background-color: #ffffff;
+				top: 0;
+			}
+
+			.header .menu .mobile-menu-head .go-back {
+				height: 50px;
+				width: 50px;
+				border-right: 1px solid rgba(0, 0, 0, 0.1);
+				cursor: pointer;
+				line-height: 50px;
+				text-align: center;
+				color: #000000;
+				font-size: 16px;
+				display: none;
+			}
+
+			.header .menu .mobile-menu-head.active .go-back {
+				display: block;
+			}
+
+			.header .menu .mobile-menu-head .current-menu-title {
+				font-size: 15px;
+				font-weight: 500;
+				color: #000000;
+			}
+
+			.header .menu .mobile-menu-head .mobile-menu-close {
+				height: 50px;
+				width: 50px;
+				border-left: 1px solid rgba(0, 0, 0, 0.1);
+				cursor: pointer;
+				line-height: 50px;
+				text-align: center;
+				color: #000000;
+				font-size: 25px;
+			}
+
+			.header .menu .menu-main {
+				height: 100%;
+				overflow-x: hidden;
+				overflow-y: auto;
+			}
+
+			.header .menu>ul>li .sub-menu.mega-menu,
+			.header .menu>ul>li .sub-menu {
+				visibility: visible;
+				opacity: 1;
+				position: absolute;
+				box-shadow: none;
+				margin: 0;
+				padding: 15px;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				padding-top: 65px;
+				max-width: none;
+				min-width: auto;
+				display: none;
+				transform: translateX(0%);
+				overflow-y: auto;
+			}
+
+			.header .menu>ul>li .sub-menu.active {
+				display: block;
+			}
+
+			@keyframes slideLeft {
+				0% {
+					opacity: 0;
+					transform: translateX(100%);
+				}
+
+				100% {
+					opacity: 1;
+					transform: translateX(0%);
+				}
+			}
+
+			@keyframes slideRight {
+				0% {
+					opacity: 1;
+					transform: translateX(0%);
+				}
+
+				100% {
+					opacity: 0;
+					transform: translateX(100%);
+				}
+			}
+
+			.header .menu>ul>li .sub-menu.mega-menu-column-4>.list-item img {
+				margin-top: 0;
+			}
+
+			.header .menu>ul>li .sub-menu.mega-menu-column-4>.list-item.text-center .title {
+				margin-bottom: 20px;
+			}
+
+			.header .menu>ul>li .sub-menu.mega-menu-column-4>.list-item.text-center:last-child .title {
+				margin-bottom: 0px;
+			}
+
+			.header .menu>ul>li .sub-menu.mega-menu-column-4>.list-item {
+				flex: 0 0 100%;
+				padding: 0px;
+			}
+
+			.header .menu>ul>li .sub-menu>ul>li>a,
+			.header .menu>ul>li .sub-menu.mega-menu>.list-item>ul>li>a {
+				display: block;
+			}
+
+			.header .menu>ul>li .sub-menu.mega-menu>.list-item>ul {
+				margin-bottom: 15px;
+			}
+
+			.menu-overlay {
+				position: fixed;
+				background-color: rgba(0, 0, 0, 0.5);
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 1098;
+				visibility: hidden;
+				opacity: 0;
+				transition: all 0.5s ease;
+			}
+
+			.menu-overlay.active {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- header start -->
+	<header class="header" style="background-color: #ffffff;">
+		<div class="container">
+			<div class="row v-center">
+				<a href="/index.html"><h1 style="font-size: 40px; font-weight: 700; color: #24a3d8">Social Socities</h1></a>
+				<!-- menu start here -->
+				<div class="header-item item-center">
+					<div class="menu-overlay">
+					</div>
+					<nav class="menu" style="float: right;">
+						<div class="mobile-menu-head">
+							<div class="go-back"><i class="fa fa-angle-left"></i></div>
+							<div class="current-menu-title"></div>
+							<div class="mobile-menu-close">&times;</div>
+						</div>
+						<ul class="menu-main">
+							<li>
+								<a href="/index.html" style="color: rgb(0, 0, 0);">Home</a>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="#" style="color: rgb(0, 0, 0);">Team <i class="fa fa-angle-down"></i></a>
+								<div class="sub-menu mega-menu mega-menu-column-4">
+									<div class="list-item text-center">
+										<a href="#">
+											<img src="img/social media.png" alt="new Product">
+											<h4 class="title">MUHAMMAD MOHSIN <br>Social Media MArketing</h4>
+										</a>
+									</div>
+									<div class="list-item text-center">
+										<a href="#">
+											<img src="img/online-directories.png" alt="new Product">
+											<h4 class="title">MUHAMMAD WASEEM <br> Data Analyst & Web Developer</h4>
+										</a>
+									</div>
+									<div class="list-item text-center">
+										<a href="#">
+											<img src="img/ai-seo-agency.png" alt="new Product">
+											<h4 class="title">KASHIF IQBAL <br> Professional Graphic Designer</h4>
+										</a>
+									</div>
+									<div class="list-item text-center">
+										<a href="#">
+											<img src="img/about.jpg" alt="new Product" style="width: 195px;">
+											<h4 class="title"></h4>
+										</a>
+									</div>
+								</div>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="#" style="color: rgb(0, 0, 0);">Services<i class="fa fa-angle-down"></i></a>
+								<div class="sub-menu mega-menu mega-menu-column-4">
+									<div class="list-item">
+										<h4 class="title">Seo & PPC</h4>
+										<ul>
+											<li><a href="/services/E-commerce Seo.html" target="_blank">E-commerce
+													Seo</a></li>
+											<li><a href="#">E-commerce Link Building</a></li>
+											<li><a href="#">E-commerce Seo Strategy</a></li>
+											<li><a href="#">Seo for Retail Website</a></li>
+											<li><a href="#">Seo for Shopify</a></li>
+										</ul>
+										<h4 class="title">Ads Running</h4>
+										<ul>
+											<li><a href="/INSTAGRAM ADS.html" target="_blank">Ads for
+													Instagram</a></li>
+											<li><a href="/YOUTUBE ADS.html" target="_blank">Ads for YouTube</a>
+											</li>
+											<li><a href="/FACEBOOK ADS.html" target="_blank">Ads for FaceBook
+												</a></li>
+										</ul>
+									</div>
+									<div class="list-item">
+										<h4 class="title">Industry We Serve</h4>
+										<ul>
+											<li><a href="#">Seo for Accountants</a></li>
+											<li><a href="#">Seo for Cleaning Companies</a></li>
+											<li><a href="#">Seo for Gyms</a></li>
+											<li><a href="#">Seo for Wedding venues</a></li>
+										</ul>
+										<h4 class="title">Graphic Designing</h4>
+										<ul>
+											<li><a href="#">Business Card Designing</a></li>
+											<li><a href="#">UI & UX Elements Designing</a></li>
+											<li><a href="#">Banners & Posters Designing</a></li>
+											<li><a href="#">Custom Ads & Video Editing</a></li>
+										</ul>
+									</div>
+									<div class="list-item">
+										<h4 class="title">WebDesign & Development</h4>
+										<ul>
+											<li><a href="#">Web Designs</a></li>
+											<li><a href="#">Web Programming</a></li>
+											<li><a href="#">Web Networking</a></li>
+											<li><a href="#">Web 3.0</a></li>
+											<li><a href="#">Landing Page Development</a></li>
+											<li><a href="#">Portfolio Development</a></li>
+											<li><a href="#">Custom Web Development</a></li>
+											<li><a href="#">Business Site Development</a></li>
+											<li><a href="#">Educational Site Development</a></li>
+										</ul>
+									</div>
+									<div class="list-item">
+										<img src="img/OIP social.jpeg" alt="shop" style="margin-top: 35px;">
+									</div>
+								</div>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="blog.html" style="color: rgb(0, 0, 0);">Blog <i class="fas fa-angle-down"></i></a>
+								<div class="sub-menu single-column-menu">
+									<!-- <ul>
+										<li><a href="#">Standard Layout</a></li>
+										<li><a href="#">Grid Layout</a></li>
+										<li><a href="#">single Post Layout</a></li>
+									</ul> -->
+								</div>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="about.html" style="color: rgb(0, 0, 0);">About Us <i class="fas fa-angle-down"></i></a>
+								<div class="sub-menu single-column-menu">
+									<!-- <ul>
+										<li><a href="#">Login</a></li>
+										<li><a href="#">Register</a></li>
+										<li><a href="#">Faq</a></li>
+										<li><a href="#">404 Page</a></li>
+									</ul> -->
+								</div>
+							</li>
+							<li>
+								<a href="#" style="color: rgb(0, 0, 0);">Contact</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<!-- menu end here -->
+				<div class="header-item item-right">
+					<a href="#"><i class="fas fa-search"></i></a>
+					<a href="#"><i class="far fa-heart"></i></a>
+					<a href="#"><i class="fas fa-shopping-cart"></i></a>
+					<!-- mobile menu trigger -->
+					<div class="mobile-menu-trigger">
+						<span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- header end -->
+</head>
+<body>
+    <form target="_blank" action="https://formsubmit.co/personalgithub110@gmail.com" method="POST">
+    <section class="text-gray-600 body-font relative">
+        <form target="_blank" action="https://formsubmit.co/personalgithub110@gmail.com" method="POST">
+        <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+          <div class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231281.0005900971!2d55.06268014551968!3d25.075931460483396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1713800929458!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">
+              <div class="lg:w-1/2 px-6">
+                <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
+                <p class="mt-1">Feel Free To join Us in Dubai UAE</p>
+              </div>
+              <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
+                <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">EMAIL</h2>
+                <a class="text-indigo-500 leading-relaxed">socialsocities@gmail.com</a>
+                <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">PHONE</h2>
+                <p class="leading-relaxed">+971553-6390-43</p>
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+            <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Feedback</h2>
+            <p class="leading-relaxed mb-5 text-gray-600">Social Community </p>
+            <div class="relative mb-4">
+              <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+              <input type="text"  class="leading-7 text-sm text-gray-600" placeholder="Enter your Name">
+            </div>
+            <div class="relative mb-4">
+              <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+              <input type="text"  class="leading-7 text-sm text-gray-600" placeholder="Enter Your Email">
+            </div>
+            <div class="relative mb-4">
+             <!-- <input type="text"  class="leading-7 text-sm text-gray-600" placeholder="message"> -->
+             <textarea name="message" placeholder="Enter Your message" id="" cols="30" rows="10" style="border: 2px solid lightblue;"></textarea>
+            </div>
+            <form target="_blank" action="https://formsubmit.co/personalgithub110@gmail.com" method="POST">
+
+                
+               <b> <button>send mail</button></b>
+            <!-- <p class="text-xs text-gray-500 mt-3">Chicharrones blog helvetica normcore iceland tousled brook viral artisan.</p> -->
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+    <!-- form -->
+    <!-- <form target="_blank" action="https://formsubmit.co/personalgithub110@gmail.com" method="POST">
+
+        <input type="text" placeholder="Enter Your name">
+        <input type="text" placeholder="Enter Your Last-name">
+        <input type="text" placeholder="messgae">
+        
+        <button>send mail</button>
+     -->
+
+<!-- section -->
+
+<section class="text-gray-600 body-font">
+	<div class="container px-5 py-24 mx-auto">
+	  <div class="flex flex-col text-center w-full mb-20">
+	<b>	<h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1" style="color:  #24a3d8;">SOCIAL SOCITIES</h2></b>
+		<h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">SOCIAL MEDIA ADS </h1>
+		<p class="lg:w-2/3 mx-auto leading-relaxed text-base">Social Socities is a results-orientated SEO agency with an impressive portfolio of satisfied customers. We understand that SEO is an absolute necessity for E-commerce companies in the 2022s and should not be prohibitively expensive. For that reason, we continually strive to keep our costs down and pass the savings on to our customers.
+
+			But when you enlist the services of Social Socities you get more than just an affordable E-commerce SEO Agency for UAE & Asia businesses. You get a strategic partner who will help your company achieve its growth targets and position itself for success long-term.</p>
+	  </div>
+	  <div class="flex flex-wrap">
+		<div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+		  <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2" style="color: #24a3d8;">High Search Ranking Equals More Customers</h2>
+		  <p class="leading-relaxed text-base mb-4">You can have the best product ever created but if your website is buried on page 3 or 6 or 10 no one will know. Someone else can have an inferior product but a superior SEO campaign behind them, wind up #1 in organic search results and enjoy fabulous success. Few services will return a more impressive ROI than an effective SEO campaign for an e-commerce site.</p>
+		  <a class="text-indigo-500 inline-flex items-center" style="color:  #24a3d8;">Learn More
+			<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+			  <path d="M5 12h14M12 5l7 7-7 7"></path>
+			</svg>
+		  </a>
+		</div>
+		<div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+		  <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2" style="color: #24a3d8;">SEO Is The Gift That Keeps On Giving</h2>
+		  <p class="leading-relaxed text-base mb-4">Paid ads are great but last only so long. A website that has been properly optimised for search engines will provide long term benefits that, in time, help the site take on a life of its own. The longer your site is prominent in search results the more familiar people will be with it and the more likely they will be to click on it. After a while, they will navigate directly to it bypassing search altogether.</p>
+		  <a class="text-indigo-500 inline-flex items-center" style="color:  #24a3d8;">Learn More
+			<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+			  <path d="M5 12h14M12 5l7 7-7 7"></path>
+			</svg>
+		  </a>
+		</div>
+		<div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+		  <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2" style="color: #24a3d8;">Optimising Your Site For Search Is Beneficial In Other Ways</h2>
+		  <p class="leading-relaxed text-base mb-4">If your website has been effectively optimised for search that means it is compatible with the full array of mobile platforms, that the content is of high quality and that any coding issues on the backend have been rectified. All of those things will enhance the user experience, promote loyalty from visitors and position you for growth.</p>
+		  <a class="text-indigo-500 inline-flex items-center" style="color:  #24a3d8;">Learn More
+			<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+			  <path d="M5 12h14M12 5l7 7-7 7"></path>
+			</svg>
+		  </a>
+		</div>
+		<div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+		  <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2" style="color: #24a3d8;">Equally Effective Customer Service</h2>
+		  <p class="leading-relaxed text-base mb-4">Every member of our team understands that the best possible kind of customer service is doing the job right the first time. That said there may still be occasions when a customer is having an issue, needs clarification or wants to modify the nature or scope of their SEO campaign. For that reason, we offer top-quality customer support services that specialise in providing timely, appropriate solutions to customer concerns.</p>
+		  <a class="text-indigo-500 inline-flex items-center" style="color: #24a3d8;">Learn More
+			<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+			  <path d="M5 12h14M12 5l7 7-7 7"></path>
+			</svg>
+		  </a>
+		</div>
+	  </div>
+	  <a href="index.html" target="_blank"><button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" style="
+		background-color: #24a3d8;
+	">MORE INFO</button></a>
+	</div>
+  </section>
+
+<footer class="text-gray-600 body-font">
+	<div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+		<a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+			<img src="/img/letter-s.png" alt="" width="50px">
+			<span class="ml-3 text-xl" style="color: rgb(0, 0, 0);">SOCIAL SOCITIES</span>
+		</a>
+		<p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4"
+			style="color: rgb(0, 0, 0);">© 2024 SOCIAL SOCITIES —
+			<b><a href="#" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank"
+					style="color: rgb(0, 0, 0);">SOCIAL SOCITIES</a></b>
+		</p>
+		<span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+			<a href="#" class="text-gray-500">
+				<!-- FaceBook -->
+				<img src="/img/facebook.png" alt="" width="25px">
+			</a>
+			<a href="#" class="ml-3 text-gray-500">
+				<!-- twitter -->
+				<img src="/img/twitter.png" alt="" width="25px">
+			</a>
+			<a href="#" class="ml-3 text-gray-500">
+				<!-- instagram -->
+				<img src="/img/instagram.png" alt="" width="25px">
+			</a>
+			<a href="#" class="ml-3 text-gray-500">
+				<!-- YouTube -->
+				<img src="/img/youtube.png" alt="" width="25px">
+			</a>
+		</span>
+	</div>
+</footer>
+<!-- footer End -->
+
+</body>
+</html>
+
+
+
+    
